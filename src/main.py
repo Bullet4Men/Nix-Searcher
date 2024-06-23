@@ -154,7 +154,7 @@ package_unfree - License status (for example, free or non-free).
 
         with console.status("[bold green]Making request...", spinner="clock"):
             json_response = get_json(**kwargs)
-
+    
         if (len(json_response.get('hits', {}).get('hits', [])) == 0):
             print(f"Error: Package \"{args.package}\" not found!")
 
@@ -179,6 +179,8 @@ package_unfree - License status (for example, free or non-free).
                 tree.add(f"[blue]Long Description[/]: {package_info.get('package_longDescription')}")
                 tree.add(f"[blue]Outputs[/]: [bright_cyan]{', '.join(package_info.get('package_outputs'))}")
                 console.print(tree)
+        else:
+            print(f"Error: Package \"{args.package}\" not found!")
     else:
         kwargs = vars(args)
 
