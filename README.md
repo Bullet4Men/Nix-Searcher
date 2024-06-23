@@ -53,22 +53,22 @@ nix-searcher [options] package
 
 Search for a package named "example" and display detailed information:
 
-`nix-searcher --info example`
+`nix-searcher --info "example package"`
 
 Search for a package named "example" in the unstable channel and sort the results by package version in descending order:
 
-`nix-searcher --channel unstable --sort-by package_pversion --sort-order desc example`
+`nix-searcher --channel unstable --sort-by package_pversion --sort-order desc "example package"`
 
 Search for a package named "example" maintained by "John Doe" and display detailed information:
 
-`nix-searcher --maintainer "John Doe" --info example`
+`nix-searcher --maintainer "John Doe" --info "example package"`
 
 Search for a package named "example" available for the "x86_64-linux" platform:
 
-`nix-searcher --platform x86_64-linux example`
+`nix-searcher --platform x86_64-linux "example package"`
 
 # TODO
- - [ ] Enhance error handling.
+ - [x] Enhance error handling.
  - [x] Make installation easier.
  - [ ] Add search by flakes, options.
 

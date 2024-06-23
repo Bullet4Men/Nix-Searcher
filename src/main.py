@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import requests
-import json
 import argparse
 from rich.tree import Tree
 from rich.console import Console
@@ -157,7 +156,7 @@ package_unfree - License status (for example, free or non-free).
             json_response = get_json(**kwargs)
 
         if (len(json_response.get('hits', {}).get('hits', [])) == 0):
-            print(f"Error: Package {args.package} not found!")
+            print(f"Error: Package \"{args.package}\" not found!")
 
         for package in json_response.get('hits', {}).get('hits', []):
             package_info = package.get('_source', {})
@@ -185,6 +184,9 @@ package_unfree - License status (for example, free or non-free).
 
         with console.status("[bold green]Making request...", spinner="clock"):
             json_response = get_json(**kwargs)
+
+        if (len(json_response.get('hits', {}).get('hits', [])) == 0):
+            print(f"Error: Package \"{args.package}\" not found!")    
 
         for package in json_response.get('hits', {}).get('hits', []):
             package_info = package.get('_source')
