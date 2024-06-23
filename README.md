@@ -6,13 +6,7 @@ This is a command-line tool for searching NixOS packages.
 
 1. Clone this repository.
 2. Navigate to the cloned directory.
-3. python -m venv venv
-4. source ./venv/bin/activate
-5. pip install -r requirements.txt
-6. pyinstaller --onefile --name nix-searcher ./src/main.py
-7. nix-build default.nix
-8. nix-env -i -f default.nix
-9. deactivate 
+8. `nix-env -if default.nix`
 
 ## Usage
 
@@ -75,8 +69,8 @@ Search for a package named "example" available for the "x86_64-linux" platform:
 
 # TODO
  - [ ] Enhance error handling.
- - [ ] Make installation easier
- - [ ] Add search by flakes, options
+ - [x] Make installation easier.
+ - [ ] Add search by flakes, options.
 
 ## License
 
